@@ -1,1 +1,195 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: RHBold;
+  src: url("../assets/fonts/static/RedHatText-Bold.ttf");
+}
+
+@font-face {
+  font-family: RHSemi;
+  src: url("../assets/fonts/static/RedHatText-SemiBold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 50px auto;
+  font-size: 1rem;
+  background: #f1f1f1;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: RHBold;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: RHBold;
+  font-size: 30px;
+  color: orangered;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 90%;
+  gap: 20px;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 90%;
+  height: 400px;
+  border: 10px;
+  padding: 5px;
+}
+
+.card >* {
+  margin-bottom: 10px;
+}
+
+.image-card {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border: 1px solid red;
+  background: red;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  width: 150px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .4);
+  cursor: pointer;
+}
+
+.btn-add-cart {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translatex(-50%);
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-change-amount {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translatex(-50%);
+  background-color: orangered;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.btn-confirm-order {
+  border-radius: 100px;
+  width: 100%;
+  background-color: orangered;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  font-family: RHSemi;
+}
+
+.display {
+  display: none;
+}
+
+.btn-icon {
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  display: inline-block;
+}
+
+.add {
+  background: url("../assets/images/icon-add-to-cart.svg");
+}
+
+.decrement {
+  background: url("../assets/images/icon-decrement-quantity.svg");
+}
+
+.increment {
+  background: url("../assets/images/icon-increment-quantity.svg");
+}
+
+.confirm-order {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+  background: #fff;
+}
+
+.remove-item {
+  transform: rotate(-0.5turn);
+  width: 15px;
+  height: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(190, 124, 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(190, 124, 2);
+  border-radius: 10px;
+}
+
+.order-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  padding: 10px;
+}
+.items {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.carbon {
+  background: #fff4dd;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.carbon-neutral {
+  background: url("../assets/images/icon-carbon-neutral.svg");
+  width: 20px;
+}
+
+.ordered-product > * {
+  margin-bottom: 15px;
+}

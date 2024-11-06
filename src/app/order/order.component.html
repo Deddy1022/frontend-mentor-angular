@@ -1,0 +1,33 @@
+<div class="confirm-order">
+  <h2>Your Cart({{ totalItems }})</h2>
+  @if(addedItems.length > 0)
+  {
+    @for(product of addedItems; track product.name)
+    {
+      <div class="order-container items">
+        <div class="ordered-product">
+          <h3>{{ product.name }}</h3>
+          <p>
+            <span style="color: orangered">{{ product.total }}x</span>
+            {{ product.price | currency }} {{ product.totalPrice | currency }}
+          </p>
+        </div>
+        <div class="remove-item">+</div>
+      </div>
+    }
+    <div class="order-container">
+      <p>Order total</p>
+      <h3>43,23</h3>
+    </div>
+    <div class="carbon">
+      <i class="carbon-neutral"></i> <span>this is a <strong>carbon-neutral</strong> delivery</span>
+    </div>
+    <button class="btn btn-confirm-order">
+      Confirm Order
+    </button>
+  }
+  @else
+  {
+    <p>Your added items will appear here</p>
+  }
+</div>

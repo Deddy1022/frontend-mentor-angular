@@ -1,0 +1,13 @@
+
+<div class="container">
+  <div>
+    <h1>Dessert</h1>
+    <div class="product-container">
+      @for(product of productsList; track product.name)
+      {
+        <app-product [product]="product" (addCart)="addItems($event)" />
+      }
+    </div>
+  </div>
+  <app-order [totalItems]="totalItems" [addedItems]="addedItems" />
+</div>

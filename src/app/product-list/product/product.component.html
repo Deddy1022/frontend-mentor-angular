@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="image-card">
+    <img class="product-img" [src]="product.image.desktop" alt="{{ product.category }} image">
+    <button class="btn btn-add-cart {{ !currentState }}" (click)="toggleState('')"><i class="btn-icon add"></i>Add to cart</button>
+    <button class="btn btn-change-amount {{ currentState }}">
+      <i class="btn-icon decrement" (click)="addToCart(product.name, product.price, '-')"></i>
+      {{ currentCount }}
+      <i class="btn-icon increment" (click)="addToCart(product.name, product.price, '+')"></i>
+    </button>
+  </div>
+  <p class="product product-category">{{ product.category }}</p>
+  <h4 class="product product-name">{{ product.name }}</h4>
+  <h4 class="product product-price">{{ product.price | currency }}</h4>
+</div>
