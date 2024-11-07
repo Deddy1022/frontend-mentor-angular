@@ -12,7 +12,7 @@
             {{ product.price | currency }} {{ product.totalPrice | currency }}
           </p>
         </div>
-        <div class="remove-item">+</div>
+        <div class="remove-item" (click)="deleteOne(product)">+</div>
       </div>
     }
     <div class="order-container">

@@ -20,31 +20,29 @@ export class ProductComponent {
     let total = 0;
     switch(operator) {
       case "+":
-        total += this.currentCount++;
+        total += ++this.currentCount;
         break;
       case "-":
         total -= this.decrement();
         break;
     }
     if(total <= 0) return;
-    let totalPrice = price * total;
-    const productItem: OrderedProducts = {
-      name,
-      total,
-      price,
-      totalPrice
+    else
+    {
+      let totalPrice = price * total;
+      const productItem: OrderedProducts = {
+        name,
+        total,
+        price,
+        totalPrice
+      }
+      this.addCart.emit(productItem);
     }
-    this.addCart.emit(productItem);
   }
 
-  private increment = (): number => this.currentCount++
   private decrement = (): number => {
     if(this.currentCount <= 0) return 0;
-    return this.currentCount--
-  }
-
-  private existingProduct(product: OrderedProducts): number {
-    return this.products.findIndex(p => p.name == product.name);
+    return --this.currentCount;
   }
 
   toggleState(value: typeof this.currentState): void {

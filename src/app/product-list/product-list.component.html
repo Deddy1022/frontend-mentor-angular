@@ -9,5 +9,5 @@
       }
     </div>
   </div>
-  <app-order [totalItems]="totalItems" [addedItems]="addedItems" />
+  <app-order [totalItems]="totalItems" [addedItems]="addedItems" (productDeletion)="deleteItem($event)" />
 </div>
